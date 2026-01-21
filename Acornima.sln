@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.2.11415.280
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{B829D50D-2973-4B4F-B6C5-7B088CFC9DEB}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{C924464D-28FC-427E-A65A-A75ADCDADA00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavascriptParser.Demo", "JavascriptParser.Demo\JavascriptParser.Demo.csproj", "{EA0F4233-D172-F9EE-A264-4DD5971C2100}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71570FFF-0BEA-4AF7-8288-9E46627EA676}"
 	ProjectSection(SolutionItems) = preProject
@@ -24,16 +22,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acornima", "src\Acornima\Ac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acornima.SourceGenerators", "src\Acornima.SourceGenerators\Acornima.SourceGenerators.csproj", "{E88ED3EB-27F2-4BAF-805F-EE25F810F4EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavascriptParser.Demo", "JavascriptParser.Demo\JavascriptParser.Demo.csproj", "{EA0F4233-D172-F9EE-A264-4DD5971C2100}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C924464D-28FC-427E-A65A-A75ADCDADA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C924464D-28FC-427E-A65A-A75ADCDADA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{384C7882-6721-4885-9DFC-461BD6AE2ABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{384C7882-6721-4885-9DFC-461BD6AE2ABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{384C7882-6721-4885-9DFC-461BD6AE2ABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,7 +45,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C924464D-28FC-427E-A65A-A75ADCDADA00} = {B829D50D-2973-4B4F-B6C5-7B088CFC9DEB}
 		{C428FBAE-48E0-4C47-B9D2-688866714516} = {71570FFF-0BEA-4AF7-8288-9E46627EA676}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
