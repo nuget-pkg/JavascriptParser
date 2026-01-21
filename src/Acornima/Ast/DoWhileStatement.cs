@@ -1,0 +1,22 @@
+using System.Runtime.CompilerServices;
+
+namespace JavascriptParser.Ast;
+
+[VisitableNode(ChildProperties = new[] { nameof(Body), nameof(Test) })]
+public sealed partial class DoWhileStatement : Statement
+{
+    public DoWhileStatement(Statement body, Expression test)
+        : base(NodeType.DoWhileStatement)
+    {
+        Body = body;
+        Test = test;
+    }
+
+    public Statement Body { [MethodImpl(MethodImplOptions.AggressiveInlining)] get; }
+    public Expression Test { [MethodImpl(MethodImplOptions.AggressiveInlining)] get; }
+
+    private DoWhileStatement Rewrite(Statement body, Expression test)
+    {
+        return new DoWhileStatement(body, test);
+    }
+}

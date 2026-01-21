@@ -1,0 +1,20 @@
+using System.Runtime.CompilerServices;
+
+namespace JavascriptParser.Ast;
+
+[VisitableNode(ChildProperties = new[] { nameof(Label) })]
+public sealed partial class ContinueStatement : Statement
+{
+    public ContinueStatement(Identifier? label)
+        : base(NodeType.ContinueStatement)
+    {
+        Label = label;
+    }
+
+    public Identifier? Label { [MethodImpl(MethodImplOptions.AggressiveInlining)] get; }
+
+    private ContinueStatement Rewrite(Identifier? label)
+    {
+        return new ContinueStatement(label);
+    }
+}

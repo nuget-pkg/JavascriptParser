@@ -1,0 +1,99 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net462;netstandard2.1;netstandard2.0</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <AssemblyTitle>JavascriptParser</AssemblyTitle>
+    <AssemblyName>JavascriptParser</AssemblyName>
+    <Description>A standard-compliant JavaScript parser, which is a fork of Esprima.NET combined with the .NET port of the acornjs parser.</Description>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageId>JavascriptParser</PackageId>
+    <PackageTags>javascript, ecmascript, parser</PackageTags>
+    <NoWarn>CA1852;CS1591;CA1863;CA1309;CA1716;CA1510;CA1720;CA1051;CA1711;CA1069</NoWarn>
+
+    <!-- Ensure support for trimming and AOT compilation -->
+    <IsTrimmable Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net5.0'))">true</IsTrimmable>
+    <IsAotCompatible Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net7.0'))">true</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'netstandard2.1'))">
+    <PackageReference Include="System.Memory" VersionOverride="4.5.5" />
+  </ItemGroup>
+
+  <ItemGroup Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net6.0'))">
+   <PackageReference Include="System.Runtime.CompilerServices.Unsafe" VersionOverride="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Acornima.SourceGenerators\Acornima.SourceGenerators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <!--
+  <ItemGroup>
+    <InternalsVisibleTo Include="Acornima.Benchmarks, PublicKey=00240000048000009400000006020000002400005253413100040000010001009386e741f80212b92e6324bd2d5d89871d081fa41cce46ba30a3d3cae4be4935a92cf6c76a55e5192adad2235139d550816388bdad8a972a7a4eace42838c7694a0124c56174ff27690ba4d470c423ee72efac06decef995b89b6e936b59fe4c6ba88d3c2d3a34216221e1bf455faf1c3e88d93f37b0891b2fbbad9bf606d9ce" />
+    <InternalsVisibleTo Include="Acornima.Extras, PublicKey=00240000048000009400000006020000002400005253413100040000010001009386e741f80212b92e6324bd2d5d89871d081fa41cce46ba30a3d3cae4be4935a92cf6c76a55e5192adad2235139d550816388bdad8a972a7a4eace42838c7694a0124c56174ff27690ba4d470c423ee72efac06decef995b89b6e936b59fe4c6ba88d3c2d3a34216221e1bf455faf1c3e88d93f37b0891b2fbbad9bf606d9ce" />
+    <InternalsVisibleTo Include="Acornima.Tests, PublicKey=00240000048000009400000006020000002400005253413100040000010001009386e741f80212b92e6324bd2d5d89871d081fa41cce46ba30a3d3cae4be4935a92cf6c76a55e5192adad2235139d550816388bdad8a972a7a4eace42838c7694a0124c56174ff27690ba4d470c423ee72efac06decef995b89b6e936b59fe4c6ba88d3c2d3a34216221e1bf455faf1c3e88d93f37b0891b2fbbad9bf606d9ce" />
+  </ItemGroup>
+  -->
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\RegExpConversionErrorMessages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RegExpConversionErrorMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\ExceptionMessages.Designer.cs">
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Properties\SyntaxErrorMessages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SyntaxErrorMessages.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\RegExpConversionErrorMessages.resx">
+      <LastGenOutput>RegExpConversionErrorMessages.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>JavascriptParser</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\ExceptionMessages.resx">
+      <SubType>Designer</SubType>
+      <LastGenOutput>ExceptionMessages.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>JavascriptParser</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\SyntaxErrorMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SyntaxErrorMessages.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>JavascriptParser</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <!-- Configure polyfills -->
+
+  <PropertyGroup>
+    <PolySharpIncludeGeneratedTypes Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net6.0'))">
+      System.Runtime.CompilerServices.CallerArgumentExpressionAttribute;
+      System.Runtime.CompilerServices.IsExternalInit;
+      System.Runtime.CompilerServices.SkipLocalsInitAttribute
+    </PolySharpIncludeGeneratedTypes>
+
+    <PolySharpIncludeGeneratedTypes Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'netstandard2.1'))">
+      $(PolySharpIncludeGeneratedTypes);
+      System.Diagnostics.CodeAnalysis.NotNullAttribute;
+      System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute;
+      System.Diagnostics.CodeAnalysis.NotNullWhenAttribute;
+      System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute;
+    </PolySharpIncludeGeneratedTypes>
+  </PropertyGroup>
+
+</Project>

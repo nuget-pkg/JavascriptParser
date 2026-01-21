@@ -1,0 +1,27 @@
+using System.Runtime.CompilerServices;
+
+namespace JavascriptParser.Ast;
+
+[VisitableNode(ChildProperties = new[] { nameof(Test), nameof(Consequent), nameof(Alternate) })]
+public sealed partial class IfStatement : Statement
+{
+    public IfStatement(
+        Expression test,
+        Statement consequent,
+        Statement? alternate)
+        : base(NodeType.IfStatement)
+    {
+        Test = test;
+        Consequent = consequent;
+        Alternate = alternate;
+    }
+
+    public Expression Test { [MethodImpl(MethodImplOptions.AggressiveInlining)] get; }
+    public Statement Consequent { [MethodImpl(MethodImplOptions.AggressiveInlining)] get; }
+    public Statement? Alternate { [MethodImpl(MethodImplOptions.AggressiveInlining)] get; }
+
+    private IfStatement Rewrite(Expression test, Statement consequent, Statement? alternate)
+    {
+        return new IfStatement(test, consequent, alternate);
+    }
+}

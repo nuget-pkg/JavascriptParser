@@ -1,0 +1,18 @@
+namespace JavascriptParser;
+
+public enum TokenKind
+{
+    Unknown,
+    Punctuator,
+    Keyword,
+    Identifier,
+    NullLiteral,
+    BooleanLiteral,
+    StringLiteral,
+    NumericLiteral,
+    BigIntLiteral,
+    RegExpLiteral,
+    Template,
+    EOF,
+    Extension = -1
+}
