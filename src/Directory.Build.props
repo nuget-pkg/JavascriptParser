@@ -15,7 +15,7 @@
     <Authors>Adam Simon</Authors>
     <Copyright>Adam Simon</Copyright>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/adams85/acornima</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/nuget-pkg/JavascriptParser</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
 
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
