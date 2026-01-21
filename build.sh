@@ -21,7 +21,7 @@ sed -i -e "s/<Version>.*<\/Version>/<Version>${version}<\/Version>/g" Acornima.c
 rm -rf *.nupkg
 dotnet pack -o . -p:Configuration=Release -p:Platform="Any CPU" Acornima.csproj
 
-exit 0
+#exit 0
 
 tag="JavascriptParser-v$version"
 cd $cwd
