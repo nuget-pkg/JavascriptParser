@@ -4,8 +4,10 @@
   <PropertyGroup>
     <VersionPrefix>0.1.0</VersionPrefix>
 
+    <!--
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\Karambolo.Public.snk</AssemblyOriginatorKeyFile>
+    -->
 
     <UseArtifactsOutput>true</UseArtifactsOutput>
     <ArtifactsPath>$(MSBuildThisFileDirectory)..\artifacts</ArtifactsPath>
