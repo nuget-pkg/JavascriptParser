@@ -1,4 +1,4 @@
 #! /usr/bin/env bash
 set -uvx
 set -e
-start rider64.exe JavascriptParser.sln
+start rider64.exe Acornima.sln

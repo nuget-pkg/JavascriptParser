@@ -1,4 +1,4 @@
 #! /usr/bin/env bash
 set -uvx
 set -e
-start devenv.exe JavascriptParser.sln
+start devenv.exe Acornima.sln
