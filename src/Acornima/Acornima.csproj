@@ -6,6 +6,7 @@
 
     <AssemblyTitle>JavascriptParser</AssemblyTitle>
     <AssemblyName>JavascriptParser</AssemblyName>
+    <Version>2026.0121.2038.22</Version>
     <Description>A standard-compliant JavaScript parser, which is a fork of Esprima.NET combined with the .NET port of the acornjs parser.</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageId>JavascriptParser</PackageId>

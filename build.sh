@@ -6,22 +6,22 @@ cwd=`pwd`
 ts=`date "+%Y.%m%d.%H%M.%S"`
 version="${ts}"
 
-cd $cwd
-cp README.md JavascriptParser/
+#cd $cwd
+#cp README.md JavascriptParser/
 
 cd $cwd
 find . -name bin -exec rm -rf {} +
 find . -name obj -exec rm -rf {} +
 
 cd $cwd
-dotnet test -p:Configuration=Release -p:Platform="Any CPU" JavascriptParser.sln
+dotnet test -p:Configuration=Release -p:Platform="Any CPU" Acornima.sln
 
-cd $cwd/JavascriptParser
-sed -i -e "s/<Version>.*<\/Version>/<Version>${version}<\/Version>/g" JavascriptParser.csproj
+cd $cwd/src/Acornima
+sed -i -e "s/<Version>.*<\/Version>/<Version>${version}<\/Version>/g" Acornima.csproj
 rm -rf *.nupkg
-dotnet pack -o . -p:Configuration=Release -p:Platform="Any CPU" JavascriptParser.csproj
+dotnet pack -o . -p:Configuration=Release -p:Platform="Any CPU" Acornima.csproj
 
-#exit 0
+exit 0
 
 tag="JavascriptParser-v$version"
 cd $cwd
