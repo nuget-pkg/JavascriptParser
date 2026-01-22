@@ -22,6 +22,7 @@ find . -name "*.cs" -exec sed -i -e "s/Acornima/JavascriptParser/g" {} +
 #cp Directory.* $cwd/
 cp -r src/Acornima/* $cwd/src/Acornima/
 cp -r src/Acornima.Extras/* $cwd/src/Acornima/
+cp -r src/Acornima.SourceGenerators/* $cwd/src/Acornima.SourceGenerators/
 
 cd $cwd
 rm -rf src/src.sln
