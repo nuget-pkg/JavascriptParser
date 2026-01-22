@@ -18,6 +18,7 @@ dotnet build build/_build.csproj -nodeReuse:false -p:UseSharedCompilation=false 
 #dotnet run --project build/_build.csproj --no-build -- "$@"
 find . -name "*.csproj" -exec rm -rf {} +
 find . -name "*.cs" -exec sed -i -e "s/Acornima/JavascriptParser/g" {} +
+find . -name "*.cs" -print0 | xargs -0 unix2dos
 #find . -name "*.csproj" -exec sed -i -e "s/>Acornima</>JavascriptParser</g" {} +
 #cp Directory.* $cwd/
 cp -r src/Acornima/* $cwd/src/Acornima/
