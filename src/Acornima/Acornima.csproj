@@ -80,7 +80,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommonJsonInterface" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.14.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="4.14.0" PrivateAssets="all" />
+    <PackageReference Include="PolySharp" Version="1.15.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="CommonJsonInterface" Version="2026.122.1008.12" />
   </ItemGroup>
 
   <!-- Configure polyfills -->
