@@ -19,6 +19,7 @@ dotnet build build/_build.csproj -nodeReuse:false -p:UseSharedCompilation=false 
 find . -name "*.csproj" -exec rm -rf {} +
 find . -name "*.cs" -exec sed -i -e "s/Acornima/JavascriptParser/g" {} +
 #find . -name "*.csproj" -exec sed -i -e "s/>Acornima</>JavascriptParser</g" {} +
+#cp Directory.* $cwd/
 cp -r src/Acornima/* $cwd/src/Acornima/
 cp -r src/Acornima.Extras/* $cwd/src/Acornima/
 
