@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-// ReSharper disable once CheckNamespace
 namespace JavascriptParser.Helpers;
 
 internal class StringSliceEqualityComparer : IEqualityComparer<ReadOnlyMemory<char>>
