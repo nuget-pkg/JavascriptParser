@@ -12,6 +12,7 @@ mkdir -p tmp
 cd tmp
 git clone --recursive https://github.com/adams85/acornima
 cd acornima
+rm -rf .git
 echo "Microsoft (R) .NET SDK version $(dotnet --version)"
 dotnet build build/_build.csproj -nodeReuse:false -p:UseSharedCompilation=false -nologo -clp:NoSummary --verbosity quiet
 #dotnet run --project build/_build.csproj --no-build -- "$@"
