@@ -7,7 +7,7 @@
     <PackageVersion Include="BenchmarkDotNet" Version="0.15.6" />
     <PackageVersion Include="CommonJsonInterface" Version="2026.122.1008.12" />
     <PackageVersion Include="DiffEngine" Version="17.0.0" />
-    <PackageVersion Include="EasyObjectClassic" Version="2026.120.2023.34" />
+    <PackageVersion Include="EasyObjectClassic" Version="2026.122.1203.46" />
     <PackageVersion Include="Esprima" Version="3.0.5" />
     <PackageVersion Include="GitHubActionsTestLogger" Version="2.4.1" />
     <PackageVersion Include="McMaster.Extensions.CommandLineUtils" Version="4.1.1" />

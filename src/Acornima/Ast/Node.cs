@@ -13,7 +13,7 @@ namespace JavascriptParser.Ast;
 // * https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree
 
 [DebuggerDisplay($"{{{nameof(GetDebugDisplayText)}(), nq}}")]
-public abstract class Node : INode
+public abstract class Node : INode, Global.IExportToCommonJson
 {
     protected Node(NodeType type)
     {
@@ -64,7 +64,11 @@ public abstract class Node : INode
         set => _additionalDataSlot.PrimaryData = value;
     }
 
-    protected internal abstract object? Accept(AstVisitor visitor);
+    //protected internal abstract object? Accept(AstVisitor visitor);
+    protected internal virtual object? Accept(AstVisitor visitor)
+    {
+        return null;
+    }
 
     /// <summary>
     /// Dispatches the visitation of the current node to <see cref="AstVisitor.VisitExtension(Node)"/>.
@@ -96,5 +100,10 @@ public abstract class Node : INode
         });
 
         return $"/*{TypeText}*/  {toDebugDisplayText!(this)}";
+    }
+
+    public string ExportToCommonJson()
+    {
+        return this.ToJson(indent: "  ");
     }
 }
