@@ -15,4 +15,8 @@ public abstract partial class Node : INode, Global.IExportToCommonJson
     {
         return this.ToJson(indent: "  ");
     }
+    public override string ToString()
+    {
+        return this.ToJson(indent: "  ");
+    }
 }

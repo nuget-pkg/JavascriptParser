@@ -1,3 +1,4 @@
+using System;
 using JavascriptParser;
 using static Global.EasyObjectClassic;
 
@@ -17,5 +18,6 @@ static class Program
         Echo(ast.ToJson(indent: "  "));
         Echo(ast.ToJavaScript());
         Echo(ast, "ast");
+        Console.WriteLine(ast);
     }
 }
