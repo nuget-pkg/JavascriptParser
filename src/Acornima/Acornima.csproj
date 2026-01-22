@@ -12,6 +12,15 @@
     <PackageId>JavascriptParser</PackageId>
     <PackageTags>javascript, ecmascript, parser</PackageTags>
     <NoWarn>CA1852;CS1591;CA1863;CA1309;CA1716;CA1510;CA1720;CA1051;CA1711;CA1069</NoWarn>
+    <NoWarn>$(NoWarn);CA1051</NoWarn>  <!-- Do not declare visible instance fields -->
+    <NoWarn>$(NoWarn);CA1069</NoWarn>  <!-- Enums values should not be duplicated -->
+    <NoWarn>$(NoWarn);CA1309</NoWarn>  <!-- Use ordinal string comparison (NOTE: this rule seems broken) -->
+    <NoWarn>$(NoWarn);CA1720</NoWarn>  <!-- Identifier contains type name -->
+    <NoWarn>$(NoWarn);CA1716</NoWarn>  <!-- Identifiers should not match keywords -->
+    <NoWarn>$(NoWarn);CA1510</NoWarn>  <!-- Use ArgumentNullException.ThrowIfNull -->
+    <NoWarn>$(NoWarn);CA1711</NoWarn>  <!-- Identifiers should not have incorrect suffix -->
+    <NoWarn>$(NoWarn);CA1863</NoWarn>  <!-- Cache a 'CompositeFormat' for repeated use in this formatting operation -->
+    <NoWarn>$(NoWarn);CA1822</NoWarn>  <!-- メンバー '*' はインスタンス データにアクセスしないため、static にマークできます -->
 
     <!-- Ensure support for trimming and AOT compilation -->
     <IsTrimmable Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net5.0'))">true</IsTrimmable>
