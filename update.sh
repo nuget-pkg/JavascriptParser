@@ -24,6 +24,7 @@ cp -r src/Acornima/* $cwd/src/Acornima/
 cp -r src/Acornima.Extras/* $cwd/src/Acornima/
 
 cd $cwd
+rm -rf src/src.sln
 cp src/Acornima/Ast/Node.cs src/Acornima/Ast/Node.cs.orig
 sed -i -e "s/public abstract class Node : INode/public abstract partial class Node : INode, Global.IExportToCommonJson/g" src/Acornima/Ast/Node.cs
 cp -r modified/* .
