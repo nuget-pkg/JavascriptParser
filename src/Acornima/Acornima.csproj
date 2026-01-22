@@ -6,7 +6,7 @@
 
     <AssemblyTitle>JavascriptParser</AssemblyTitle>
     <AssemblyName>JavascriptParser</AssemblyName>
-    <Version>2026.0121.2052.02</Version>
+    <Version>2026.0122.1206.27</Version>
     <Description>A standard-compliant JavaScript parser, which is a fork of Esprima.NET combined with the .NET port of the acornjs parser.</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageId>JavascriptParser</PackageId>
@@ -77,6 +77,10 @@
       <LastGenOutput>SyntaxErrorMessages.Designer.cs</LastGenOutput>
       <CustomToolNamespace>JavascriptParser</CustomToolNamespace>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommonJsonInterface" />
   </ItemGroup>
 
   <!-- Configure polyfills -->

@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="BenchmarkDotNet" Version="0.15.6" />
+    <PackageVersion Include="CommonJsonInterface" Version="2026.122.1008.12" />
     <PackageVersion Include="DiffEngine" Version="17.0.0" />
     <PackageVersion Include="EasyObjectClassic" Version="2026.120.2023.34" />
     <PackageVersion Include="Esprima" Version="3.0.5" />
