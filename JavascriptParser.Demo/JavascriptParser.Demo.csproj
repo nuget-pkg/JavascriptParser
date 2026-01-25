@@ -38,7 +38,7 @@
 		</Content>
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="EasyObjectClassic" Version="2026.122.1203.46" />
+	  <PackageReference Include="EasyObjectClassic" Version="2026.124.1325.45" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\src\Acornima\Acornima.csproj" />
